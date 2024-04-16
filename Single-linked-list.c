@@ -2,13 +2,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// Define the structure for a node
+
 struct Node {
     int data;
     struct Node* next;
 };
 
-// Function to create a new node
+
 struct Node* createNode(int data) {
     struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
     if (newNode == NULL) {
@@ -20,14 +20,13 @@ struct Node* createNode(int data) {
     return newNode;
 }
 
-// Function to insert a new node at the beginning of the list
+
 void insertAtBeginning(struct Node** head, int data) {
     struct Node* newNode = createNode(data);
     newNode->next = *head;
     *head = newNode;
 }
 
-// Function to insert a new node at the end of the list
 void insertAtEnd(struct Node** head, int data) {
     struct Node* newNode = createNode(data);
     if (*head == NULL) {
@@ -41,7 +40,6 @@ void insertAtEnd(struct Node** head, int data) {
     }
 }
 
-// Function to delete the first occurrence of a node with given data
 void deleteNode(struct Node** head, int data) {
     if (*head == NULL) {
         printf("List is empty\n");
@@ -65,7 +63,6 @@ void deleteNode(struct Node** head, int data) {
     free(temp);
 }
 
-// Function to display the linked list
 void displayList(struct Node* head) {
     while (head != NULL) {
         printf("%d -> ", head->data);
@@ -83,11 +80,10 @@ int main() {
     insertAtBeginning(&head, 2);
     insertAtBeginning(&head, 1);
 
-    // Display the list
     printf("Linked List after insertion: ");
     displayList(head);
 
-    // Delete a node
+    
     deleteNode(&head, 2);
 
     // Display the list after deletion
