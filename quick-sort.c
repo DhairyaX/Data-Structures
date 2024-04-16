@@ -1,6 +1,5 @@
 #include <stdio.h>  
-  
-// Function to swap two elements  
+    
 void swap(int* a, int* b) {  
     int t = *a;  
     *a = *b;  
@@ -27,7 +26,7 @@ void quickSort(int arr[], int low, int high) {
     }  
 }  
   
-// Function to print the array  
+
 void printArray(int arr[], int size) {  
     int i;  
     for (i = 0; i < size; i++)  
